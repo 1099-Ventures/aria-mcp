@@ -1,0 +1,47 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UserSecretsId>27d76199-8734-4e4b-979d-4c8503f3dc24</UserSecretsId>
+  </PropertyGroup>
+
+  <!-- Packaging: a self-contained dotnet tool, runnable via `dnx`. Version/feed are supplied by
+       the pipeline (ADO #427/#428); PackAsTool here just fixes the runnable shape. -->
+  <PropertyGroup>
+    <IsPackable>true</IsPackable>
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>aria-ado-mcp</ToolCommandName>
+    <PackageId>Ten99.Aria.Mcp.Ado</PackageId>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Description>ARIA's native C# Azure DevOps MCP server — multi-org, lean responses, registry-based config. Run via dnx.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Azure.Identity" Version="1.21.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="10.0.12" />
+    <PackageReference Include="ModelContextProtocol" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ten99.Aria.Common\Ten99.Aria.Common.csproj" />
+    <ProjectReference Include="..\Ten99.Aria.Identity.EntraId\Ten99.Aria.Identity.EntraId.csproj" />
+    <ProjectReference Include="..\Ten99.Aria.Hosting.Mcp.Core\Ten99.Aria.Hosting.Mcp.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ado.config.sample.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <!-- Dev convenience only: copy build output to the local MCP-Servers share when it exists.
+       Guarded on the destination so the build stays portable (CI/dnx/pack, boxes without the share). -->
+
+</Project>

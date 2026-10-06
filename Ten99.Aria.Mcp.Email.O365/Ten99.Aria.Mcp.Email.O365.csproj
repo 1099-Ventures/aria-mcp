@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UserSecretsId>51a26c94-9f9a-4ec7-b764-8b4207a61c24</UserSecretsId>
+  </PropertyGroup>
+
+  <!-- Packaging: a self-contained dotnet tool, runnable via `dnx`. Version/feed are supplied by
+       the pipeline (ADO #427/#428); PackAsTool here just fixes the runnable shape. -->
+  <PropertyGroup>
+    <IsPackable>true</IsPackable>
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>aria-o365-mcp</ToolCommandName>
+    <PackageId>Ten99.Aria.Mcp.Email.O365</PackageId>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Description>ARIA's Microsoft 365 (Outlook/Graph) email MCP server — read/filter/triage a mailbox. App-only (SP) or interactive delegated sign-in. Run via dnx.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="10.0.12" />
+    <PackageReference Include="Microsoft.Graph" Version="6.6.0" />
+    <PackageReference Include="ModelContextProtocol" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ten99.Aria.Common\Ten99.Aria.Common.csproj" />
+    <ProjectReference Include="..\Ten99.Aria.Hosting.Mcp.Core\Ten99.Aria.Hosting.Mcp.Core.csproj" />
+    <ProjectReference Include="..\Ten99.Aria.Integration.Graph\Ten99.Aria.Integration.Graph.csproj" />
+    <ProjectReference Include="..\Ten99.Aria.Integration.Graph.Email\Ten99.Aria.Integration.Graph.Email.csproj" />
+    <ProjectReference Include="..\Ten99.Aria.Identity.EntraId\Ten99.Aria.Identity.EntraId.csproj" />
+  </ItemGroup>
+
+
+</Project>

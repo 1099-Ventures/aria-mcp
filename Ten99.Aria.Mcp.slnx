@@ -1,0 +1,12 @@
+<Solution>
+  <Project Path="Ten99.Aria.Common/Ten99.Aria.Common.csproj" />
+  <Project Path="Ten99.Aria.Hosting.Mcp.Core/Ten99.Aria.Hosting.Mcp.Core.csproj" />
+  <Project Path="Ten99.Aria.Identity.EntraId/Ten99.Aria.Identity.EntraId.csproj" />
+  <Project Path="Ten99.Aria.Integration.Graph/Ten99.Aria.Integration.Graph.csproj" />
+  <Project Path="Ten99.Aria.Integration.Graph.Email/Ten99.Aria.Integration.Graph.Email.csproj" />
+  <Project Path="Ten99.Aria.Mcp.Ado/Ten99.Aria.Mcp.Ado.csproj" />
+  <Project Path="Ten99.Aria.Mcp.Codecks/Ten99.Aria.Mcp.Codecks.csproj" />
+  <Project Path="Ten99.Aria.Mcp.LocalFiles/Ten99.Aria.Mcp.LocalFiles.csproj" />
+  <Project Path="Ten99.Aria.Mcp.Email.O365/Ten99.Aria.Mcp.Email.O365.csproj" />
+  <Project Path="Ten99.Aria.Mcp.Email.Imap/Ten99.Aria.Mcp.Email.Imap.csproj" />
+</Solution>
