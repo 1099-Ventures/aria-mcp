@@ -1,0 +1,33 @@
+<Project>
+
+  <!--
+    Shared package metadata for the ARIA solution.
+
+    Nothing publishes by default: IsPackable is false for every project, and the
+    handful of packages we ship opt in with <IsPackable>true</IsPackable> in their
+    own csproj. This protects the internal foundation (e.g. Common.Secrets.Azure)
+    from being pushed to any feed by a solution-wide `dotnet pack`.
+
+    The public metadata below only materialises in packages that actually pack.
+    RepositoryUrl / PackageProjectUrl point at the public GitHub mirror
+    (1099-Ventures/aria-mcp), which the MCP projects are published from.
+  -->
+  <PropertyGroup>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Authors>1099 Ventures Inc</Authors>
+    <Company>1099 Ventures Inc</Company>
+    <Copyright>Copyright © 2026 1099 Ventures Inc</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/1099-Ventures/aria-mcp</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/1099-Ventures/aria-mcp</PackageProjectUrl>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+
+</Project>

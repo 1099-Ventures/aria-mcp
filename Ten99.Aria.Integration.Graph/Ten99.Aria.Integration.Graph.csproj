@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Ten99.Aria.Integration.Graph</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ten99.Aria.Common\Ten99.Aria.Common.csproj" />
+    <ProjectReference Include="..\Ten99.Aria.Identity.EntraId\Ten99.Aria.Identity.EntraId.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Azure.Identity" Version="1.21.0" />
+    <PackageReference Include="Microsoft.Graph" Version="6.6.0" />
+    <PackageReference Include="Microsoft.Identity.Client" Version="4.88.0" />
+  </ItemGroup>
+
+</Project>

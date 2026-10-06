@@ -1,0 +1,10 @@
+{
+  "//": "Sample Codecks MCP multi-org config. Copy to a deployed location (NOT committed with real tokens) and pass via the host arg: --config <path>. When supplied this replaces the legacy --token/--account args. 'Account' is the Codecks workspace slug (sent as X-Account); 'Key' is the friendly selector used by org_switch.",
+  "Codecks": {
+    "DefaultOrg": "acme-studio",
+    "Orgs": [
+      { "Key": "acme-studio", "Account": "acme-studio", "Token": "REPLACE_WITH_TOKEN" },
+      { "Key": "acme-game", "Account": "acme-game", "Token": "REPLACE_WITH_TOKEN" }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "//": "Optional --config for the ADO MCP (settings only). The ORG LIST is NOT here — it lives in the global registry {home}/.claude/.ado-mcp-orgs.json (map of key -> {orgName, authType, domains[]}, no secrets). See README.",
+  "//DefaultOrg": "Prefer the CLI --default-org <key> or env Ado__DefaultOrg. NO root fallback — unset means 'no active org until ado_switch_organization'.",
+  "//Pats": "Only for authType=pat orgs; keeps the registry secret-free. Prefer env Ado__Pats__<key>. Never commit real PATs.",
+  "//RegistryPath": "Optional override of the {home}/.claude/.ado-mcp-orgs.json default (or use --registry <path>).",
+  "Ado": {
+    "DefaultOrg": "1099",
+    "RegistryPath": null,
+    "IndentResponses": false,
+    "Pats": {
+      "1099": "REPLACE_WITH_PAT_OR_USE_ENV"
+    }
+  }
+}

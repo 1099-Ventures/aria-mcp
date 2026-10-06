@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UserSecretsId>4c82f91a-f2ba-4cb0-b99f-7a2309792dd3</UserSecretsId>
+  </PropertyGroup>
+
+  <!-- Packaging: a self-contained dotnet tool, runnable via `dnx`. Version/feed are supplied by
+       the pipeline (ADO #427/#428); PackAsTool here just fixes the runnable shape. -->
+  <PropertyGroup>
+    <IsPackable>true</IsPackable>
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>aria-imap-mcp</ToolCommandName>
+    <PackageId>Ten99.Aria.Mcp.Email.Imap</PackageId>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Description>ARIA's IMAP/SMTP (MailKit) email MCP server — read/filter/triage a mailbox over any IMAP server. A second IEmailService backend mirroring the O365 tool surface. Basic auth today (XOAUTH2 to follow). Run via dnx.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="10.0.12" />
+    <PackageReference Include="MailKit" Version="4.17.0" />
+    <PackageReference Include="ModelContextProtocol" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ten99.Aria.Common\Ten99.Aria.Common.csproj" />
+    <ProjectReference Include="..\Ten99.Aria.Hosting.Mcp.Core\Ten99.Aria.Hosting.Mcp.Core.csproj" />
+    <ProjectReference Include="..\Ten99.Aria.Integration.Graph.Email\Ten99.Aria.Integration.Graph.Email.csproj" />
+  </ItemGroup>
+
+
+</Project>
